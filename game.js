@@ -10,12 +10,14 @@ function startOver(){
   gameStarted = false;
 }
 
-$(document).keypress(function() { //user press any key
-  if (!gameStarted) {
+$(document).ready(function() { //user press any key
+  $("#start").click(function(){
+    if (!gameStarted) {
     gameStarted = true;
     $("h1").text(`Level ${level}`);
     nextSequence();
-  }
+    }
+  });
 });
 
 $(document).ready(function(){ //user clicked button/ user's chose
