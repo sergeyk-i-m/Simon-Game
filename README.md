@@ -5,7 +5,7 @@ A simple Simon Game built with HTML, CSS, and jQuery. Test your memory and conce
 This is a classic **Simon Game** built using **HTML**, **CSS**, and **jQuery**. The goal of the game is to test and train your memory by repeating an increasingly long sequence of colors and sounds.
 
 ## 🕹 How to Play
-- Press any key (or click) to start the game.
+- Click the "Start" buyyon to start the game.
 - Watch the pattern of colors that lights up.
 - Repeat the pattern by clicking the buttons in the correct order.
 - With each round, a new color is added to the sequence.
