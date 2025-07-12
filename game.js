@@ -3,6 +3,12 @@ let userClickedPattern = [];
 let gameStarted = false;
 let level = 0;
 let buttonColours = ["red", "blue", "green", "yellow"];
+let topLevel = 0;
+
+
+
+
+
 
 function startOver(){
   level = 0;
@@ -52,15 +58,16 @@ function checkAnswer(currentLevel) {
 }
 
 function nextSequence(){ //the game code
-    userClickedPattern = [];
-    let randomNumber = Math.floor(Math.random()*4); //создаем рандомное число от 0 до 3
-    level++;
-    $("h1").text(`Level ${level}`);
-    let randomChosenColour = buttonColours[randomNumber]; //используем рандомное число что бы указать индекс цвета из массива
-    gamePattern.push(randomChosenColour); // добавляем рандомный цвет в пустой массив
-    $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100); //прослушка на кнопку которая будет моргать.
-    playSound(randomChosenColour);
-
+  userClickedPattern = [];
+  let randomNumber = Math.floor(Math.random()*4); //создаем рандомное число от 0 до 3
+  level++;
+  $("h1").text(`Level ${level}`);
+  let randomChosenColour = buttonColours[randomNumber]; //используем рандомное число что бы указать индекс цвета из массива
+  gamePattern.push(randomChosenColour); // добавляем рандомный цвет в пустой массив
+  $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100); //прослушка на кнопку которая будет моргать.
+  playSound(randomChosenColour);
+  topLevel = Math.max(topLevel, level);
+  $(".score").text(topLevel-1);
 }
 
 
